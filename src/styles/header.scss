@@ -1,0 +1,279 @@
+.header{
+    width: 100%;    ;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    .bigbg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        div{
+            z-index: .9;
+            margin-left: 15rem;
+            opacity: .3;
+            width: 55rem;
+            height: 55rem;
+            filter: blur(90px);
+            border-radius: 50%;
+            background-color:#903AFF;
+        }
+
+    }
+    .starwhite{
+            position: absolute;
+        top: 20.9rem;
+        left: 18.5rem;
+    }
+    .bg{
+        position: absolute;
+        top: 30rem;
+        right: 5rem;
+        z-index: 1;
+        .bgchild{  
+            opacity: .4;
+            width: 70rem;
+            height: 70rem;
+            filter: blur(70px);
+            border-radius: 50%;
+            background-color:rgb(62,9,118);
+        }
+    }
+    .innosect{
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 3.6rem;
+        font-style: italic;
+        font-weight: 700;
+        line-height: normal;
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        padding:3.2rem 5.5rem 0 ;
+        .typewriter{
+            min-width: 74.2rem;
+        }
+        .innoline{
+            padding-top: .2rem;
+            text-align: right;
+            padding-right: 2.6rem;
+        }
+    }
+    &__section{
+        padding-left: 13.1rem;
+        position: relative;
+        background: url('../assets/images/headerman.png');
+        background-repeat: no-repeat;
+        background-position: right 0 bottom -2.8rem;
+        background-size: fill;
+        &__info{
+            padding-top: 6.3rem;
+           
+            .heading{
+                .tophead{
+                    width: fit-content;
+                    display: flex;
+                    flex-direction: column;
+                    .bulb{
+                        margin-left: auto;
+                        margin-right: 2.8rem;
+                        margin-bottom: -2.6rem;
+                    }
+                }
+                .bottomhead{
+                    display: flex;
+                    align-items: center;
+                    h1{
+                        span{
+                            color: $purple;
+                        }
+                    }
+                    .img{
+                        padding-left: .6rem;
+                    }
+                }
+            }
+            p{
+                padding-top: .8rem;
+                font-family: Montserrat;
+                font-size: 2rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 166%;
+                width: 38%;
+            }
+            button{
+                margin: 4.1rem 0 7.7rem;
+            }
+            .countdown{
+                display: flex;
+                gap: 3rem;
+                padding-bottom: 9.5rem;
+                div{
+                    span{
+                        font-family: Unica One;
+                        font-size: 6.4rem;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 133%;
+                        &.tag{
+                            font-family: Montserrat;
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+                
+              }
+        }
+        &__image{
+            position: absolute;
+            bottom:5.6rem;
+            right:6.4rem;
+            overflow: hidden;
+            z-index: 2;
+        }
+    }
+}
+@media screen and (max-width:1250px) {
+    .header{
+        &__section{
+            padding-left: 3.3rem;
+        }
+    }
+}
+@media screen and (max-width:900px) {
+    .header{
+        max-width: 100vw;
+        overflow-x: hidden;
+        .bg{
+            display: none;
+        }
+        .starwhite{
+            top: 15rem;
+            left: 12.6rem;
+        }
+        .bigbg{
+            left: 0;
+            top: 0;
+            div{
+                margin-top: 8rem;
+                margin-left: -5rem;
+                width: 25rem;
+                height: 25rem;
+                filter: blur(30px);
+            }
+        }
+        .innosect{
+            padding: 3.1rem 3.3rem 0;
+            font-size: 1.6rem;
+            .typewriter{
+                min-width: 32.4rem;
+            }
+            .innoline{
+                padding-top: 0.11rem;
+                padding-right: .9rem;
+            }
+        }
+        &__section{
+            padding:0 0;
+            padding-top: 2.6rem;
+            background-image: url('../assets/images/headerman.png');
+            background-repeat: no-repeat;
+            background-position: left -3px bottom .57rem;
+            background-size: contain;
+            margin-bottom: -.57rem;
+            &__info{
+                width: 100%;
+                padding: 0 3.3rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+              
+                .heading{
+                    text-align: center;
+                    width: 100%;
+                    h1{
+                        font-size: 3.2rem;
+                    }
+                    .tophead{
+                        width: fit-content;
+                        justify-content: center;
+                        margin: auto;
+                        .bulb{
+                           margin: auto;
+                           width: fit-content;
+                           height: fit-content;
+                           margin-right: 2rem;
+                           margin-bottom: -1.2rem;
+                          img{
+                            width: 1.8rem;
+                            height: 2.6rem;
+                            object-fit: contain;
+                          }
+                        }
+                    }
+                    .bottomhead{
+                        padding-top: .3rem;
+                        width: fit-content;
+                        margin: auto;
+                        .img{
+                            width: fit-content;
+                            height: fit-content;
+                            img{
+                                width: 3.3rem;
+                                height: 3.3rem;
+                                object-fit: contain;
+                            }
+                        }
+                        .firestar{
+                            width: fit-content;
+                            height: fit-content;
+                            img{
+                                width: 2.2rem;
+                                height: 2.2rem;
+                            }
+                        }
+                    }
+                }
+                p{
+                    width: 100%;
+                    padding: .9rem 3rem 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                }
+                button{
+                    margin: 2.4rem auto 1.42rem;
+                    font-size: 1.4rem;
+                    padding: 1.4rem 4.6rem 1.5rem;
+                }
+                .countdown{
+                    margin: 0 auto ;
+                    gap: 1.8rem;
+                    padding-bottom: 1.2rem;
+                    div{
+                        span{
+                            font-size: 4.8rem;
+                        }
+                    }
+                }
+            }
+            &__image{
+                position: static;
+                top: 0;
+                bottom: 0;
+                padding: 0 3.2rem 0 2rem;
+                padding-bottom: 4.15rem;
+                width: 100%;
+                height: 100%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                .bg{
+                    display: none;
+                }
+            }
+        }
+    }
+}

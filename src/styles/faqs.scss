@@ -1,0 +1,170 @@
+/* Faq prop */
+.faq{
+    padding: 2.5rem 0 0;
+    border-bottom: 1px solid $purple;
+    height: auto;
+    width: 100%;
+    p{
+        font-size: 1.4rem;
+        line-height: 196.5%;
+    }
+    &__heading{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .sign{
+            font-size: 2rem;
+            line-height: 137.5%;
+            margin-left: 2.4rem;
+        }
+    }
+    &__body{
+        max-height: 0;
+        overflow: hidden;
+        transition: all 500ms ease ;
+        padding-top: 1.3rem;
+
+        &.showing{
+            max-height: 30rem;
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+.faqs{
+    padding: 6.2rem 7%;
+    border-bottom:  1px solid rgba(255, 255, 255, 0.18);
+
+    &__section{
+        display: flex;
+        width: 100%;
+        gap: 2.4rem;
+        align-items: center;
+        &__left{
+            width: 42%;
+            max-width: 45%;
+            padding-left: 9%;
+            padding-top: 10.2rem;
+            .content{
+                p{
+                    width: 80%;
+                }
+            }
+            .faqssect{
+                padding-top: 4.3rem;
+            }
+        }
+        &__right{
+            width: auto;
+            position: relative;
+            .ques{
+                color: $purple;
+                font-family: 'MADE Tommy Soft Outline', sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 27.5px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                &.one{
+                    color: #A866FD;
+                    padding-left: 13.7%;
+                    padding-top: 6rem;
+                    font-size: 9.6rem;
+                }
+                &.two{
+                    font-size: 12.8rem;
+                    padding-left: 33.5%;
+                    padding-top: 1.2rem;
+                }
+                &.three{
+                    font-size: 9.6rem;
+                    padding-left: 57.5%;
+                    padding-top: 6rem;
+                }
+            }
+            .faqimg{
+                padding-top: 6rem;
+                width: 100%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1300px) {
+    .faqs{
+        padding: 6rem 3.2rem 4.9rem;
+        &__section{
+            &__left{
+                padding-left: 1rem;
+                width: 50%;
+                max-width: 50%;
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px) {
+    .faq{
+        padding: 2.37rem 0 0;
+        p{
+            font-size: 1.2rem;
+            line-height: 1.9rem;
+        }
+        &__body{
+            padding-top: .4rem;
+        }
+    }
+    .faqs{
+        &__section{
+            display: block;
+            &__left{
+                padding:0 1.5rem 0 1.6rem;
+                padding-top: 0;
+                width: 100%;
+                max-width: 100%;
+                .faqssect{
+                    padding-top: 2.2rem;
+                }
+                .content{
+                    text-align: center;
+                    h3{
+                        font-size: 2rem;
+                        line-height: 133.33%;
+                    }
+                    p{
+                        width: 100%;
+                        font-size: 1.2rem;
+                        line-height: 2.75rem;
+                        padding-top: .6rem;
+                    }
+                }
+            }
+            &__right{
+                width: 100%;
+                .ques{
+                    &.one{
+                        font-size: 4rem;
+                        padding-top: 8.6rem;
+                        padding-left: 14%;
+                    }
+                    &.two{
+                        font-size: 6.4rem;
+                        padding-top: 6.6rem;
+                    }
+                    &.three{
+                        font-size: 4rem;
+                        padding-top: 8.6rem;
+                    }
+                }
+                .faqimg{
+                    padding-top: 8.6rem;
+                }
+            }
+        }
+    }
+}
