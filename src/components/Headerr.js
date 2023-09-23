@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import Nav from './Nav'
-import Typewriter from './Typewriter'
+import Typewriter from '../Props/Typewriter'
 import globe from '../assets/images/globe.png'
 import { ReactComponent as Innoline } from '../assets/svgs/innoline.svg'
 import chain from "../assets/images/tools/chain.png"

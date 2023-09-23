@@ -1,0 +1,111 @@
+.footer{
+    background-color: #100B20;
+    p.smtext, .smtext{
+        font-size: 1.2rem;
+        line-height: 172.4%;
+    }
+    &__section{
+        padding: 7rem 20.6rem 5.3rem 22rem;
+        display: flex;
+        justify-content: space-between;
+        .heading{
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 172.4%;
+            color: $purple;
+            padding-top: .9rem;
+            font-family: 'Montserrat';
+        }
+        .about{
+            width: 38%;
+            .smalllogo{
+                font-family: 'Clash Display';
+                font-size: 3rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                margin-bottom: .6rem;
+                span{
+                    color: $purple;
+                }  
+            }
+            .small-links{
+                padding-top: 7.4rem;
+                display: flex;
+                p{
+                    &:nth-child(1){
+                        padding-right: 3.2rem;
+                        border-right: 1px solid $purple;
+                    }
+                    &:last-child{
+                        padding-left: 3.2rem;
+                    }
+                }
+              
+            }
+        }
+        .useful-links{
+            p{
+                padding: .6rem 0;
+                font-size: 1.2rem;
+            }
+            .contact-links{
+                display: flex;
+                gap: 1.6rem;
+                align-items: center;
+                p{
+                    color: $purple;
+                }
+            }
+        }
+        .contact-us{
+            .smtext{
+                padding-top: 2.1rem;
+                display: flex;
+                gap: 1.6rem;
+                &:last-child{
+                    padding-top: 2.6rem;
+                }
+                svg{
+                    margin-top: .3rem;
+                }
+            }
+        }
+    }
+    .copyright{
+        text-align: center;
+        font-family: Montserrat;
+        padding-bottom: 5.4rem;
+    }
+}
+@media screen and (max-width:1300px) {
+    .footer{
+        &__section{
+            padding: 5rem 7rem 5.3rem 6.4rem;
+        }
+    }
+}
+@media screen and (max-width:850px) {
+    .footer{
+        &__section{
+            display: block;
+            padding: 5.1rem 5.1rem 6.0rem 6.8rem;
+            .heading{
+                padding-top: 3.4rem;
+                &:last-child{
+                    padding-top: 6rem;
+                }
+            }
+            .about{
+                width: 100%;
+                .smalllogo{
+                    font-size: 2rem;
+                    margin-bottom:.9rem;
+                }
+                .small-links{
+                    padding-top: 3.9rem;
+                }
+            }
+        }
+    }
+}

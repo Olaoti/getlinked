@@ -4,6 +4,8 @@ import Intro from './components/Intro';
 import Rules from './components/Rules';
 import Criteria from './components/Criteria';
 import Faqs from './components/Faqs';
+import Privacy from './components/Privacy';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Rules/>
       <Criteria/>
       <Faqs/>
+      <Privacy/>
+      <Footer/>
     </div>
   );
 }

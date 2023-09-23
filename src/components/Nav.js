@@ -27,19 +27,19 @@ function Nav() {
     </div>
     
     <NavLink to="/"  className='link' >
-        <p className='timeline'>Timeline</p>
+        <p className='timelinelink'>Timeline</p>
       </NavLink>
       <NavLink to="/"  className='link'>
-        <p className='overview'>Overview</p>
+        <p className='overviewlink'>Overview</p>
       </NavLink>
       <NavLink to="/" className='link'>
-        <p className='faqs'>FAQs</p>
+        <p className='faqlink'>FAQs</p>
       </NavLink>
       <NavLink to="/Contact"  className='link'>
-        <p className='contact'>Contact</p>
+        <p className='contactlink'>Contact</p>
       </NavLink>
       <NavLink to="/"  className='link'>
-        <button className='gallery'>Register</button>
+        <button className='gallerylink'>Register</button>
       </NavLink>
     </div>
   </div>

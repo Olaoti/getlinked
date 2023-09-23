@@ -34,7 +34,7 @@ $purple: #D434FE;
 $bg:#150E28;
 h1{
   color: #FFF;
-  font-family: Clash Display;
+  font-family: 'Clash Display';
   font-size: 8rem;
   font-style: normal;
   font-weight: 700;
@@ -97,6 +97,10 @@ button{
 @import "./styles/rules.scss";
 @import "./styles/criteria.scss";
 @import "./styles/faqs.scss";
+@import "./styles/footer.scss";
+@import "./styles/privacy.scss";
+
+
 
 
 
