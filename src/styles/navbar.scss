@@ -8,6 +8,12 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.18);
     position: relative;
     z-index: 10;
+    &.scrolled{
+        padding: 2rem 12.8rem;
+        background-color: $bg;
+        position: fixed;
+        transition: all 300ms ease;
+    }
     .mobile{
         display: none;
     }
@@ -33,6 +39,9 @@
 @media screen and (max-width:1200px) {
     .nav{
         padding: 4rem 4.8rem;
+        &.scrolled{
+            padding: 1.2rem 4.8rem;
+        }
         &-links{
             gap: 3rem;
             button{
@@ -46,6 +55,9 @@
         display: block;
         padding: 0;
         width: 100%;
+        &.scrolled{
+            padding: 0;
+        }
         .mobile{
             display: block;
         }

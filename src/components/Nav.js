@@ -1,12 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ReactComponent as Menu } from '../assets/svgs/menu.svg'
 import { ReactComponent as Cancel } from '../assets/svgs/cancel.svg'
 import {Link, NavLink } from 'react-router-dom'
 
 function Nav() {
     const [show, setShow] = useState(false)
+    const [sow, handleShow] = useState(false);
+    const handleScroll = () => {
+      if (window.scrollY >=120) {
+        handleShow(true);
+      } else {
+        handleShow(false);
+      }
+    };
+    useEffect(() => {
+      window.addEventListener("scroll",handleScroll);
+      return () => {
+        window.removeEventListener("scroll",handleScroll);
+      };
+    }, []);
   return (
-    <div className={`nav`}> 
+    <div className={`nav ${sow&&('scrolled')}`}> 
     <div className={`mobile-nav ${show? ('showing'):('notshowing')}`} >
       <Link to={'/'} className='link'>
         <h2 className='logo'>

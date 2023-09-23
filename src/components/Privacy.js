@@ -1,11 +1,62 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import Content from "../Props/Content"
 import { ReactComponent as Mark } from '../assets/svgs/mark.svg'
 import privacyman from '../assets/images/privacyman.png'
 import Star from '../Props/Star.js'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all'
+gsap.registerPlugin(ScrollTrigger);
 
 function Privacy() {
   const windowidth = window.innerWidth
+  const belowRef = useRef(null)
+  const privacyRef = useRef(null)
+  const bodyRef = useRef(null)
+
+  useEffect(() => {
+    gsap.fromTo(
+      belowRef.current,
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        delay: 0.1,
+        scrollTrigger: {
+          trigger: belowRef.current,
+          start: "top bottom",
+        },
+      }
+    );
+    gsap.fromTo(
+        bodyRef.current,
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          delay: 0.1,
+          scrollTrigger: {
+            trigger: bodyRef.current,
+            start: "top bottom",
+          },
+        }
+      );
+      gsap.fromTo(
+        privacyRef.current,
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          delay: 0.1,
+          scrollTrigger: {
+            trigger: privacyRef.current,
+            start: "top bottom",
+          },
+        }
+      );
+  }, [belowRef, bodyRef, privacyRef]);
 
   return (
     <div className='privacy'>
@@ -39,8 +90,8 @@ function Privacy() {
                 <p className='date'>
                 Last updated on September 12, 2023
                 </p>
-                <p className='below'>Below are our privacy & policy, which outline a lot of goodies. it's our aim to always take of our participant</p>
-                <div className='box'>
+                <p className='below' ref={belowRef}>Below are our privacy & policy, which outline a lot of goodies. it's our aim to always take of our participant</p>
+                <div className='box' ref={bodyRef}>
                     <p>At getlinked tech Hackathon 1.0, we value your privacy
                     and are committed to protecting your personal information.
                     This Privacy Policy outlines how we collect, use, disclose, 
@@ -62,7 +113,7 @@ function Privacy() {
                     <button>Read More</button>
                 </div>
             </div>
-            <div className='privacy__section__right'><div className='privacyimg'>
+            <div className='privacy__section__right'><div className='privacyimg' ref={privacyRef}>
               <img src={privacyman} alt='privacy'/></div></div>
         </div>
     </div>

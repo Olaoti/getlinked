@@ -1,0 +1,2 @@
+const BaseUrl = 'https://backend.getlinked.ai'
+export default BaseUrl

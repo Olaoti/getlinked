@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Nav from '../components/Nav'
 import girl from '../assets/images/tools/girl.png'
 import boy from '../assets/images/tools/boy.png'
@@ -6,9 +6,40 @@ import registerimg from '../assets/images/registerbg.png'
 import successman from '../assets/images/successman.png'
 import successdone from '../assets/images/sucessdone.png'
 import { Link } from 'react-router-dom'
+import BaseUrl from '../Props/API'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all'
+gsap.registerPlugin(ScrollTrigger);
 
-
-function register() {
+function Register() {
+    const infoRef = useRef(null)
+    const formRef = useRef(null)
+useEffect(() => {
+  gsap.fromTo(
+    infoRef.current,
+    { opacity: 0, x: -300 },
+    {
+      opacity: 1,
+      x: 0,
+      duration: 0.5,
+      delay: 0.1,
+      scrollTrigger: {
+        trigger: infoRef.current,
+        start: "top bottom",
+      },
+    }
+  );
+  gsap.fromTo(
+    formRef.current,
+    { opacity: 0, x: 300 },
+    {
+      opacity: 1,
+      x: 0,
+      duration: 0.5,
+      delay: 0.1,
+    }
+  );
+}, [infoRef,formRef]);
   return (
     <div className='register'>
         <div className='alertsuccess noshow'>
@@ -25,12 +56,12 @@ function register() {
       <Nav/>
       <div className='bg'></div>
       <div className='register__section'>
-        <div className='register__section__left'>
+        <div className='register__section__left' ref={infoRef}>
             <div className='registerimg'>
                 <img src={registerimg} alt='register'/>
             </div>
         </div>
-        <div className='register__section__right'>
+        <div className='register__section__right' ref={formRef}>
         <div className='register-form'>
             <h3 className='heading'>Register</h3>
             <div className='movement'>
@@ -101,4 +132,4 @@ function register() {
   )
 }
 
-export default register
+export default Register

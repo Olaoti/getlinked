@@ -1,6 +1,11 @@
 .contact{
     background-color: $bg;
     width: 100%;
+    .nav{
+        &.scrolled{
+            position: static;
+        }
+    }
     .mobile{
         display: none;
     }

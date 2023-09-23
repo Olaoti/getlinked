@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef, useState,useEffect } from 'react'
 import Nav from './Nav'
 import Typewriter from '../Props/Typewriter'
 import globe from '../assets/images/globe.png'
@@ -7,14 +7,27 @@ import chain from "../assets/images/tools/chain.png"
 import firestar from "../assets/images/tools/firestar.png"
 import bulb from "../assets/images/tools/bulb.png"
 import Star from '../Props/Star'
-import gsap from 'gsap'
 import { Link } from 'react-router-dom'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all'
+gsap.registerPlugin(ScrollTrigger);
+
 
 function Headerr() {
   const windowidth = window.innerWidth
   const globeRef = useRef(null)
-  console.log(globeRef)
+  const infoRef = useRef(null)
   useEffect(()=>{
+    gsap.fromTo(
+      infoRef.current,
+    { opacity: 0, x: -200 },
+    {
+      opacity: 1,
+      x: 0,
+      duration: 0.5,
+      delay: 0.1,
+    }
+    )
     gsap.fromTo(globeRef.current, {rotation:0,  transformOrigin:'50% 50%',},{rotation:360, yoyo:true, repeat:-1, duration:120, ease:'linear'} )
   })
   
@@ -41,7 +54,7 @@ function Headerr() {
 
       </div>
       <div className='header__section'>
-        <div className='header__section__info'>
+        <div className='header__section__info' ref={infoRef}>
         
           <div className='heading'>
             <div className='tophead'>

@@ -15,16 +15,16 @@ function Footer() {
   return (
     <div className='footer'>
           <div className='whitestar starr'>
-      <Star height={windowidth>=900?(22):(12)} width={windowidth>=900?(16):(10)} delay={2} color={'white'}/>
+      <Star height={windowidth>=900?(12):(12)} width={windowidth>=900?(16):(10)} delay={2} color={'white'}/>
         </div>
         <div className='lilacstar starr'>
-      <Star height={windowidth>=900?(32):(12)} width={windowidth>=900?(26):(10)} delay={3} color={'lilac'}/>
+      <Star height={windowidth>=900?(20):(12)} width={windowidth>=900?(26):(10)} delay={3} color={'white'}/>
         </div>
         <div className='purplestar starr'>
-      <Star height={windowidth>=900?(48):(12)} width={windowidth>=900?(40):(10)} delay={3.5} color={'purple'}/>
+      <Star height={windowidth>=900?(16):(12)} width={windowidth>=900?(18):(10)} delay={3.5} color={'purple'}/>
         </div>
         <div className='greystar starr'>
-      <Star height={windowidth>=900?(30):(12)} width={windowidth>=900?(20):(10)} delay={4} color={'grey'}/>
+      <Star height={windowidth>=900?(20):(12)} width={windowidth>=900?(25):(10)} delay={4} color={'grey'}/>
         </div>
         <div className='footer__section'>
             <div className='about'>

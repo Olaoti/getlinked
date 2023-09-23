@@ -1,6 +1,22 @@
 .footer{
     background-color: #100B20;
     position: relative;
+    .whitestar{
+        top: 25%;
+        left: 8%;
+    }
+    .purplestar{
+        bottom: 20%;
+        left: 50%;
+    }
+    .lilacstar{
+        right: 10%;
+        bottom: 25%;
+    }
+    .greystar{
+        right: 25%;
+        bottom: 25%;
+    }
     p.smtext, .smtext{
         font-size: 1.2rem;
         line-height: 172.4%;

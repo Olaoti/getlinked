@@ -1,0 +1,89 @@
+.sponsors{
+    padding: 11.4rem 12.8rem 12.8rem;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p{
+        padding: 2.2rem 0 6.5rem;
+        width: 45%;
+    }
+    .images-sect{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        height: 100%;
+        padding: 14.4rem 11.7rem;
+        border: 1px solid $purple;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.01);
+
+        width: 100%;
+        gap: 5.4rem;
+        div{
+            max-height: 10.7rem;
+            height: 100%;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            &.padright{
+                border-right: 4px solid $purple;
+            }
+            &.padtop{
+                width: 80%;
+                height: .4rem;
+                background-color: $purple;
+            }
+            img{
+                object-fit: contain;
+            }
+        }
+    }
+}
+@media screen and (max-width:1200px) {
+    .sponsors{
+        padding: 7rem 6rem;
+        p{
+            width: 60%;
+        }
+    }
+}
+@media screen and (max-width:950px) {
+    .sponsors{
+        padding: 4.1rem 3rem 10.4rem;
+        h4{
+            font-size: 2rem;
+            line-height: 2.75rem;
+        }
+        p{
+            padding: .5rem 5.2rem;
+            width: 100%;
+            font-size: 1.2rem;
+            line-height: 170.8%;
+        }
+        .images-sect{
+            padding: 3.8rem 2.7rem;
+            gap: 1.5rem;
+            margin-top: 4.1rem;
+            div{
+                max-height: 3.3rem;
+                min-width: 3rem;
+                padding: 3px;
+                &.padright{
+                    border-right: 2px solid $purple;
+                }
+                &.padtop{
+                    padding: 0;
+                    height: .2rem;
+                }
+                img{
+                    max-height: 3rem;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: fill;
+                }
+            }
+        }
+    }
+}
