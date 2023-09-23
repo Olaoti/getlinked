@@ -29,8 +29,29 @@ function Headerr() {
     }
     )
     gsap.fromTo(globeRef.current, {rotation:0,  transformOrigin:'50% 50%',},{rotation:360, yoyo:true, repeat:-1, duration:120, ease:'linear'} )
-  })
+  },[])
   
+
+  const calculateTimeLeft = () => {
+    const difference = +new Date("2023-09-26T18:30:00+05:30") - +new Date();
+    let timeLeft = {};
+    if (difference > 0) {
+      timeLeft = {
+        hours: Math.floor(difference / (1000 * 60 * 60)),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    }
+
+    return timeLeft;
+  };
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+  },[timeLeft]);
   return (
     <div className='header'>
       <Nav/>
@@ -74,18 +95,21 @@ function Headerr() {
 
           </Link>
           <div className='countdown'>
-            <div>
-            <span className='hour'>00</span>
+           {(timeLeft?.hours+timeLeft?.minutes+timeLeft?.seconds) >0? 
+           (<>
+           <div>
+            <span className='hour'>{timeLeft?.hours}</span>
             <span className='tag'>H</span>
             </div>
             <div>
-            <span className='min'>00</span>
+            <span className='min'>{Number(timeLeft?.minutes)>9?(timeLeft.minutes):(`0${timeLeft.minutes}`)}</span>
             <span className='tag'>M</span>
             </div>
             <div>
-            <span className='sec'>00</span>
+            <span className='sec'>{Number(timeLeft?.seconds)>9?(timeLeft.seconds):(`0${timeLeft.seconds}`)}</span>
             <span className='tag'>S</span>
             </div>
+           </>):(<div><span color='red'>EXPIRED</span></div>)}
           </div>
         </div>
         <div className='header__section__image'>

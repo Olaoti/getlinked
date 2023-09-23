@@ -1,4 +1,7 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useState, useRef }
+ from 'react'
+import axios from 'axios';
+
 import Nav from '../components/Nav'
 import girl from '../assets/images/tools/girl.png'
 import boy from '../assets/images/tools/boy.png'
@@ -10,6 +13,7 @@ import BaseUrl from '../Props/API'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all'
 gsap.registerPlugin(ScrollTrigger);
+
 
 function Register() {
     const infoRef = useRef(null)
@@ -40,9 +44,62 @@ useEffect(() => {
     }
   );
 }, [infoRef,formRef]);
+
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    axios.get(`https://backend.getlinked.ai/hackathon/categories-list`)
+      .then((response) => {
+        setData(response.data); 
+        console.log(data)
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []); 
+
+  const [submitted, setSubmittd] = useState(false)
+  const [formData, setFormData] = useState({
+    email: '',
+    phone_number: '',
+    team_name: '',
+    group_size: 1,
+    project_topic: '',
+    category: 1,
+    privacy_policy_accepted: true,
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('https://backend.getlinked.ai/hackathon/registration', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      console.log('Registration successful:', response.data);
+      setSubmittd(true)
+    } catch (error) {
+        alert('Registration failed:', error, 'try again');
+  
+      }
+    };
+    if(loading){
+        return <div className='loading-spin'><div className='spinner'></div></div>
+    }
   return (
     <div className='register'>
-        <div className='alertsuccess noshow'>
+        <div className={`alertsuccess ${submitted? (''):('noshow')}`}>
         <div className='successmsg'>
             <div className='successimg'>
                 <img src={successdone} alt='successfully done' className='done'/>
@@ -73,39 +130,42 @@ useEffect(() => {
                 </div>
             </div>
             <h4>Create your account</h4>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className='form-grid'>
                 <div><label>Team's Name
                     </label>
-                    <input type='text' placeholder='Enter the name of your group'>
+                    <input type='text' name='team_name' id='team_name' onChange={handleChange} value={formData.team_name} placeholder='Enter the name of your group'>
                     </input>
                 </div>
                 <div><label> Phone
                     </label>
-                    <input type='phone' placeholder='Enter your phone number'>
-                    </input>
+                    <input name='phone_number' id='phone_number' type='phone' placeholder='Enter your phone number' value={formData.phone_number} onChange={handleChange}/>
                 </div>
                 <div><label>Email
                     </label>
-                    <input type='email' placeholder='Enter your email address'>
+                    <input type='email' value={formData.email} onChange={handleChange} name='email' id='email' placeholder='Enter your email address'>
                     </input>
                 </div>
                 <div><label>Project Topic
                     </label>
-                    <input type='text' placeholder='What is your group project topic'>
-                    </input>
+                    <input type='text' name='project_topic' id='project_topic' placeholder='What is your group project topic' value={formData.project_topic} onChange={handleChange}/>
                 </div>
                <div className='selectit'>
                <div><label> Category
                     </label>
-                    <select name='category' id='category'>
+                    <select name='category' id='category' onChange={handleChange} value={formData.category}>
                     <option value={'0'}>Select your category</option>
-                    <option value={'1'}>Frontend</option>
+                    {data?.map(dat=>{
+                        return(
+                            <option value={dat?.id} name={dat?.id}>{dat?.name}</option>
+                        )
+                    })}
+                  
                     </select>
                 </div>
                 <div><label>Group Size
                     </label>
-                    <select name='group size'>
+                    <select name='group_size' id='group_size'>
                         <option value={'0'}>Select</option>
                         <option value={'1'}>1</option>
                         <option value={'2'}>2</option>
@@ -120,10 +180,10 @@ useEffect(() => {
                
                 <p className='reviewreg'>Please review your registration details before submitting</p>     
                 <div className='checksect'>
-                <input type='checkbox' name='terms' id='terms'/><p>I agreed with the event terms and conditions  and privacy policy</p>
+                <input type='checkbox' name='privacy_policy_accepted' id='privacy_policy_accepted' value={formData.privacy_policy_accepted} onChange={handleChange}/><p>I agreed with the event terms and conditions  and privacy policy</p>
                 </div>
                
-                <button>Register Now</button>     
+                <button type='submit'>Register Now</button>     
             </form>
         </div>
         </div>

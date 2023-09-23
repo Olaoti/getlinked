@@ -1,9 +1,10 @@
-import React, { useRef,useEffect } from 'react'
+import axios from 'axios';
+import React, { useRef,useEffect, useState } from 'react'
 import { ReactComponent as Fb } from '../assets/svgs/fb.svg'
 import { ReactComponent as Insta } from '../assets/svgs/insta.svg'
 import { ReactComponent as Twitter } from '../assets/svgs/twitter.svg'
 import { ReactComponent as Linkedin } from '../assets/svgs/linkedin.svg'
-import Nav from '../components/Nav'
+import Nav from '../components/Nav';
 import gsap from 'gsap';
 
 function Contact() {
@@ -32,6 +33,33 @@ useEffect(() => {
   );
 }, [infoRef,formRef]);
 
+const [formData, setFormData] = useState({
+    email: '',
+    phone_number: '',
+    first_name: '',
+    message:'',
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  async function submitData(formData) {
+    try {
+      const response = await axios.post('https://backend.getlinked.ai/hackathon/contact-form', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      alert('Data submitted successfully:', response.data);
+    } catch (error) {
+      alert('Error submitting data:', error, 'try again');
+    }
+  }
+
   return (
     <div className='contact'>
         <Nav/>
@@ -51,16 +79,16 @@ useEffect(() => {
             </div>
         </div>
         <div className='contact__section__right' ref={formRef}>
-            <form>
+            <form onSubmit={submitData}>
                 <h5>Questions or need assistance?</h5>
                 <h5>Let us know  about it!</h5>
                 <p className='mailus mobile'>
                 Email us below to any question related to our event
                 </p>
                 <input type='text' placeholder="Team's name" className='mobile'/>
-                <input type='text' placeholder='Full Name'/>
-                <input type='mail' className='mail' placeholder='Mail'/>
-                <textarea placeholder='Message'/>
+                <input type='text' placeholder='Full Name' name='first_name' value={formData.first_name}  onChange={handleChange}/>
+                <input type='mail' className='mail' placeholder='Mail' value={formData.email} name='email' onChange={handleChange} />
+                <textarea placeholder='Message' name='message' value={formData.message} onChange={handleChange}/>
                 <div className='submitbutton'>
                 <button>Submit</button>
                 </div>

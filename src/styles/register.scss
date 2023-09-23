@@ -5,6 +5,9 @@
     background-color: $bg;
     .nav{
         border-bottom: none;
+            &.scrolled{
+                position: static;
+            }
     }
     .bg{
         position: absolute;
@@ -180,10 +183,14 @@
             &__right{
                 .register-form{
                     padding:0;
+                    background: $bg;
                     h4{
                         font-size: 2rem;
                     }
                     form{
+                        .reviewreg{
+                            font-size: .9rem;
+                        }
                         .form-grid{
                             display: flex;
                             flex-direction: column;
