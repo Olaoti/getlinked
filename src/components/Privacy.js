@@ -2,10 +2,37 @@ import React from 'react'
 import Content from "../Props/Content"
 import { ReactComponent as Mark } from '../assets/svgs/mark.svg'
 import privacyman from '../assets/images/privacyman.png'
+import Star from '../Props/Star.js'
 
 function Privacy() {
+  const windowidth = window.innerWidth
+
   return (
     <div className='privacy'>
+      <div className='whitestar starr'>
+      <Star height={windowidth>=900?(22):(12)} width={windowidth>=900?(16):(10)} delay={2} color={'white'}/>
+        </div>
+        <div className='lilacstar starr'>
+      <Star height={windowidth>=900?(32):(12)} width={windowidth>=900?(26):(10)} delay={3} color={'lilac'}/>
+        </div>
+        <div className='purplestar starr'>
+      <Star height={windowidth>=900?(48):(12)} width={windowidth>=900?(40):(10)} delay={3.5} color={'purple'}/>
+        </div>
+        <div className='greystar starr'>
+      <Star height={windowidth>=900?(30):(12)} width={windowidth>=900?(20):(10)} delay={4} color={'grey'}/>
+        </div>
+        <div className='whitestar1 starr'>
+      <Star height={windowidth>=900?(32):(12)} width={windowidth>=900?(26):(10)} delay={2.5} color={'white'}/>
+        </div>
+        <div className='lilacstar1 starr'>
+      <Star height={windowidth>=900?(32):(12)} width={windowidth>=900?(26):(10)} delay={3} color={'lilac'}/>
+        </div>
+        <div className='purplestar1 starr'>
+      <Star height={windowidth>=900?(48):(12)} width={windowidth>=900?(40):(10)} delay={3.5} color={'purple'}/>
+        </div>
+        <div className='greystar1 starr'>
+      <Star height={windowidth>=900?(20):(12)} width={windowidth>=900?(24):(10)} delay={3} color={'grey'}/>
+        </div>
         <div className='privacy__section'>
             <div className='privacy__section__left'>
                 <Content heading={'Privacy Policy and'} purpled={'Terms'} />

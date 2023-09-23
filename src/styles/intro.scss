@@ -1,6 +1,15 @@
 .intro{
     padding: 6.2rem 14.8rem;
     border-bottom:  1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    .purplestar{
+        top: 35%;
+        right: 30%;
+    }
+    .lilacstar{
+        top: 30%;
+        left: 20%;
+    }
     &__section{
         width: 100%;
         display: grid;
@@ -31,7 +40,7 @@
         
     }
 }
-@media screen and (max-width:1250px) {
+@media screen and (max-width:1300px) {
     .intro{
         padding: 4rem 6.3rem;
         &__section{
@@ -52,6 +61,10 @@
 }
 @media screen and (max-width:900px) {
     .intro{
+        .lilacstar{
+            top: 20%;
+            left: 10%;
+        }
         &__section{
             display: block;
             &__left{

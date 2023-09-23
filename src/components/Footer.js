@@ -5,12 +5,27 @@ import { ReactComponent as Twitter } from '../assets/svgs/twitter.svg'
 import { ReactComponent as Linkedin } from '../assets/svgs/linkedin.svg'
 import { ReactComponent as Location } from '../assets/svgs/location.svg'
 import { ReactComponent as Phone } from '../assets/svgs/phone.svg'
+import Star from '../Props/Star'
 
 
 
 function Footer() {
+  const windowidth = window.innerWidth
+
   return (
     <div className='footer'>
+          <div className='whitestar starr'>
+      <Star height={windowidth>=900?(22):(12)} width={windowidth>=900?(16):(10)} delay={2} color={'white'}/>
+        </div>
+        <div className='lilacstar starr'>
+      <Star height={windowidth>=900?(32):(12)} width={windowidth>=900?(26):(10)} delay={3} color={'lilac'}/>
+        </div>
+        <div className='purplestar starr'>
+      <Star height={windowidth>=900?(48):(12)} width={windowidth>=900?(40):(10)} delay={3.5} color={'purple'}/>
+        </div>
+        <div className='greystar starr'>
+      <Star height={windowidth>=900?(30):(12)} width={windowidth>=900?(20):(10)} delay={4} color={'grey'}/>
+        </div>
         <div className='footer__section'>
             <div className='about'>
                 <div className='smalllogo'>

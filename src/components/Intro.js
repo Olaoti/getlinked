@@ -2,10 +2,19 @@ import React from 'react'
 import Content from '../Props/Content'
 import introimg from '../assets/images/intro.png'
 import arrowimg from "../assets/images/tools/arrow.png"
+import Star from '../Props/Star'
 
 function Intro() {
+  const windowidth = window.innerWidth
+
   return (
     <div className='intro'>
+        <div className='purplestar starr'>
+      <Star height={windowidth>=900?(32):(12)} width={windowidth>=900?(26):(10)} delay={2.5} color={'purple'}/>
+        </div>
+        <div className='lilacstar starr'>
+      <Star height={windowidth>=900?(32):(12)} width={windowidth>=900?(26):(10)} delay={3} color={'lilac'}/>
+        </div>
       <div className='intro__section'>
         <div className='intro__section__left'>
           <img src={introimg} alt='' className='introimg'/>

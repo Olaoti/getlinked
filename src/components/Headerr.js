@@ -8,6 +8,7 @@ import firestar from "../assets/images/tools/firestar.png"
 import bulb from "../assets/images/tools/bulb.png"
 import Star from '../Props/Star'
 import gsap from 'gsap'
+import { Link } from 'react-router-dom'
 
 function Headerr() {
   const windowidth = window.innerWidth
@@ -26,9 +27,14 @@ function Headerr() {
       <div className='bg'>
             <div className='bgchild'></div>
           </div>
-        <div className='starwhite'>
+        <div className='starwhite starr'>
       <Star height={windowidth>=900?(32):(12)} width={windowidth>=900?(26):(10)} delay={2} color={'white'}/>
-
+        </div>
+        <div className='greystar starr'>
+      <Star height={windowidth>=900?(32):(12)} width={windowidth>=900?(26):(10)} delay={2} color={'grey'}/>
+        </div>
+        <div className='greystar2 starr'>
+      <Star height={windowidth>=900?(32):(12)} width={windowidth>=900?(26):(10)} delay={2} color={'grey'}/>
         </div>
       <div className='innosect'>
       <div className='innovation'><Typewriter typetext={'Igniting a Revolution in HR Innovation'} delay={100}/> <div className='innoline'><Innoline width={windowidth<=900?(115):(255)} height={windowidth<=900?(7):(17)}/></div> </div>
@@ -50,7 +56,10 @@ function Headerr() {
           </div>
 
           <p>Participate in getlinked tech Hackathon 2023 stand a chance to win a Big prize</p>
+          <Link className='link' to={'/register'}>
           <button>Register</button>
+
+          </Link>
           <div className='countdown'>
             <div>
             <span className='hour'>00</span>

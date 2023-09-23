@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function Content({heading, purpled, body, bold}) {
   return (
     <div className='content'>

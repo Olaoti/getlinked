@@ -4,6 +4,7 @@
     border-bottom: 1px solid $purple;
     height: auto;
     width: 100%;
+    position: relative;
     p{
         font-size: 1.4rem;
         line-height: 196.5%;
@@ -35,7 +36,23 @@
 .faqs{
     padding: 6.2rem 7%;
     border-bottom:  1px solid rgba(255, 255, 255, 0.18);
-
+    position: relative;
+    .purplestar{
+        left: 10%;
+        top: 8%;
+    }
+    .lilacstar{
+        right:45%;
+        top: 35%;
+    }
+    .greystar{
+        left: 50%;
+        bottom:45%;
+    }
+    .whitestar{
+        bottom: 8%;
+        right: 10%;
+    }
     &__section{
         display: flex;
         width: 100%;

@@ -20,12 +20,19 @@
             border-radius: 50%;
             background-color:#903AFF;
         }
-
     }
     .starwhite{
             position: absolute;
         top: 20.9rem;
         left: 18.5rem;
+    }
+    .greystar{
+        bottom: 10rem;
+        left: 40%;
+    }
+    .greystar2{
+        left: 50%;
+        top: 30%;
     }
     .bg{
         position: absolute;
@@ -136,7 +143,7 @@
         }
     }
 }
-@media screen and (max-width:1250px) {
+@media screen and (max-width:1300px) {
     .header{
         &__section{
             padding-left: 3.3rem;
@@ -243,8 +250,10 @@
                     text-align: center;
                     font-size: 1.3rem;
                 }
-                button{
+                .link{
                     margin: 2.4rem auto 1.42rem;
+                }
+                button{
                     font-size: 1.4rem;
                     padding: 1.4rem 4.6rem 1.5rem;
                 }

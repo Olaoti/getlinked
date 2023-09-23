@@ -1,5 +1,6 @@
 .footer{
     background-color: #100B20;
+    position: relative;
     p.smtext, .smtext{
         font-size: 1.2rem;
         line-height: 172.4%;
@@ -104,6 +105,11 @@
                 }
                 .small-links{
                     padding-top: 3.9rem;
+                }
+            }
+            .contact-us{
+                p{
+                    font-size: 1.2rem;
                 }
             }
         }

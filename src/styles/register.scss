@@ -1,0 +1,287 @@
+.register{
+    position: relative;
+    max-width: 100vw;
+    overflow-x: hidden;
+    background-color: $bg;
+    .nav{
+        border-bottom: none;
+    }
+    .bg{
+        position: absolute;
+        top: 12%;
+        left: -10rem;
+        overflow: hidden;
+        z-index: 1;
+        width: 55rem;
+        height: 55rem;
+        filter: blur(90px);
+        border-radius: 50%;
+        background-color:rgb(61,10,117);
+    }
+    &__section{
+        position: relative;
+        z-index: 1;
+        display: flex;
+        padding: 4.3rem 10.4rem 5.7rem 0;
+        align-items: center;
+        &__left{
+            width: auto;
+            margin-right: -rem;
+            .registerimg{
+                width: 100%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+        &__right{
+            .register-form{
+                min-width: 53%;
+                padding: 6.5rem 9.1rem;
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.03);
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                h3{
+                    color: $purple;
+                }
+                .movement{
+                    width: fit-content;
+                    display:flex ;
+                    align-items: baseline;
+                    p{
+                        padding: 4.6rem 0 1.9rem;
+                    }
+                    .avatar{
+                        height: 2.6rem;
+                        width: 10rem;
+                        border-bottom: 3px dotted $purple;
+                        display: flex;
+                        align-items: baseline;
+                        justify-content: center;
+                        img{
+                            height: 2.6rem;
+                            aspect-ratio: 1/1;
+                        }
+                    }
+                }
+                h4{
+                    font-family: Montserrat;
+                    font-size: 2.4rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    text-transform: uppercase;
+                }
+                form{
+                    padding-top: 3.3rem;
+                    .form-grid{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap:2.9rem 3.2rem;
+                        width: 100%;
+                        .selectit{
+                            grid-column: 1/3;
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            gap: 3.2rem;
+                        }
+                        div{
+                            label{
+                                color: #FFF;
+                                font-family: Montserrat;
+                                font-size: 1.4rem;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;
+                            }
+                            input, select{
+                                display: block;
+                                width: 100%;
+                                padding: 1.5rem 2.6rem;
+                                color: white;
+                                outline: none;
+                                margin-top: 1.1rem;
+                                border-radius: 4px;
+                                border: 1px solid #FFF;
+                                background: rgba(255, 255, 255, 0.03);
+                                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                                background-color: transparent;
+                                font-size: 1.4rem;
+    
+                                &::placeholder{
+                                    color: rgba(255, 255, 255, 0.25);;
+                                }
+                            }
+                           
+                            select{
+                                color: white;
+                                &::placeholder{
+                                    color: white;
+                                font-size: 1.4rem;
+                                }
+                                option{
+                                    color: black;
+                                }
+                            }
+                           
+                        }
+                    }
+                   .reviewreg{
+                    padding: 2.3rem 0 1.7rem;
+                    color: #FF26B9;
+                    font-family: Montserrat;
+                    font-size: 1.2rem;
+                    font-style: italic;
+                    font-weight: 400;
+                    line-height: normal;
+                   }
+                   .checksect{
+                    display: flex;
+                    margin-bottom: 2.2rem;
+                    p{
+                    font-size: 1.2rem;
+                    margin-left: 1rem;
+                    }
+                }
+                   button{
+                    width: 100%;
+                   }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1300px) {
+    .register{
+        &__section{
+            padding: 4rem 3rem 4rem;
+            &__right{
+                .register-form{
+                    padding: 4rem 2rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px) {
+    .register{
+        .bg{
+            width: 25rem;
+            height: 25rem;
+            filter: blur(50px);
+            left: 0;
+            top: 5%;
+        }
+        &__section{
+            display: block;
+            padding: 2.4rem 6.3rem;
+            &__right{
+                .register-form{
+                    padding:0;
+                    h4{
+                        font-size: 2rem;
+                    }
+                    form{
+                        .form-grid{
+                            display: flex;
+                            flex-direction: column;
+                            .selectit{
+                                display: flex;
+                                gap: 1.9rem;
+                                select{
+                                    padding: 1.2rem 1rem;
+                                    font-size: 1rem;
+                                }
+                            }
+                            div{
+                                padding-top: 1.8rem;
+                                label{
+                                    font-size: 1.3rem;
+                                }
+                                input, select{
+                                    padding: 1.2rem 3.1rem;
+                                }
+                                input{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.alertsuccess{
+    &.noshow{
+        display: none;
+    }
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 14;
+    background-color: rgba(21, 14, 40, 0.93);
+    display: grid;
+    place-items: center;
+    .successmsg{
+        width: 70rem;
+        padding: 4rem;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        border-radius: 5px;
+        border: 1px solid $purple;
+        background: rgba(255, 255, 255, 0.01);
+        text-align: center;
+        .successimg{
+            position: relative;
+            .done{
+                position: absolute;
+                z-index: 1;
+                left: -6rem;
+            }
+            .manimg{
+                position: relative;
+                z-index: 2;
+            }
+        }
+        h4{
+            font-size: 2.4rem;
+            font-weight: 600;
+            font-family: Montserrat;
+            line-height: 166%;
+            padding: 2.9rem 0;
+        }
+        p{
+            line-height: 166%;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        .link{
+            width: 100%;
+        }
+        button{
+            width: 100%;
+            min-width: 100%;
+            margin: 4rem 0;
+        }
+    }
+}
+@media screen and (max-width:800px) {
+    .alertsuccess{
+        .successmsg{
+            width: 31.7rem;
+            h4{
+                font-size: 1.6rem;
+            }
+            p{
+                font-size: 1.2rem;
+            }
+            button{
+                margin: 4rem 0 0;
+            }
+        }
+    }
+}

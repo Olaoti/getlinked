@@ -60,6 +60,8 @@ h3{
 .link{
   color: inherit;
   text-decoration: none;
+  margin: inherit;
+  z-index: 12;
 }
 p{
   font-size: 1.6rem;
@@ -91,6 +93,31 @@ button{
     padding-top: 1.6rem;
   }
 }
+.backgnd{
+  position: absolute;
+  top: 12%;
+  left: -10rem;
+  overflow: hidden;
+  z-index: 1;
+  width: 55rem;
+  height: 55rem;
+  filter: blur(90px);
+  border-radius: 50%;
+  background-color:rgb(61,10,117);
+}
+@media screen and (max-width:900px) {
+  .backgnd{
+    width: 25rem;
+    height: 25rem;
+    filter: blur(50px);
+    left: 0;
+    top: 5%;
+}
+}
+.starr{
+  position: absolute;
+}
+
 @import "./styles/navbar.scss";
 @import "./styles/header.scss";
 @import "./styles/intro.scss";
@@ -99,8 +126,27 @@ button{
 @import "./styles/faqs.scss";
 @import "./styles/footer.scss";
 @import "./styles/privacy.scss";
+@import "./styles/register.scss";
+@import "./styles/contact.scss";
 
 
-
+.active{
+  .contactlink{
+    background: linear-gradient(90deg, #903AFF 3.08%, #FF26B9 93.85%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+a.register.active{
+  padding: 1px;
+  background-color: red;
+  width: fit-content;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #903AFF 3.08%, #FF26B9 93.85%);
+  button{
+    background: $bg;
+  }
+}
 
 

@@ -4,7 +4,8 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import Contact from './Contact';
+import Contact from './pages/Contact';
+import Registerme from './pages/Registerme.js';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/register",
+    element: <Registerme />,
   }
 ]);
 

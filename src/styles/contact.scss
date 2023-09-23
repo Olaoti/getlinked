@@ -1,0 +1,132 @@
+.contact{
+    background-color: $bg;
+    width: 100%;
+    .mobile{
+        display: none;
+    }
+    .nav{
+        border-bottom: none;
+    }
+    p{
+        &.share{
+            padding-top: 3.5rem;
+            color: $purple;
+        }
+    }
+    .contact-links{
+        display: flex;
+        padding-top: 1.4rem;
+        gap: 1.6rem;
+        align-items: center;
+    }
+    &__section{
+        padding:11.5rem 13% 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        &__left{
+            padding-left: 19rem;
+            h3{
+                color: $purple;
+            }
+            p{
+                padding-top: 1.7rem;
+            }
+        }
+        &__right{
+            form{
+                padding: 7.5rem 9rem 6.7rem;
+                background: rgba(255, 255, 255, 0.03);
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                border-radius: 1.2rem;
+                h5{
+                    font-size: 2rem;
+                    color: $purple;
+                    font-weight: 600;
+                    padding-bottom: 3.4rem;
+                    line-height: 133%;
+                }
+                input, textarea{
+                    width: 100%;
+                    background-color: transparent;
+                    border-radius: 4px;
+                    border: 1px solid #FFF;
+                    background: rgba(255, 255, 255, 0.03);
+                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                    padding: 1.3rem 2.9rem;
+                    font-size: 1.6rem;
+                    color: white;
+                    outline: none;
+                    &::placeholder{
+                        color: white;
+                    }
+                }
+                .mail{
+                    margin-top: 4.2rem;
+                }
+                textarea{
+                    margin-top: 3.9rem;
+                    min-height: 12rem;
+                }
+                .submitbutton{
+                    padding-top: 3.1rem;
+                    display: grid;
+                    place-items: center;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1300px) {
+    .contact{
+        &__section{
+            padding: 6rem 4rem 0;
+            &__left{
+                padding-left: 4rem;
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px) {
+    .contact{
+        .mobile{
+            display: flex;
+        }
+        &__section{
+            padding: 4.6rem 4.6rem 3.6rem;
+            display: block;
+            &__left{
+                display: none;
+            }
+            &__right{
+                padding-left: .3rem;
+                form{
+                    padding: 0;
+                    background: none;
+                    box-shadow: none;
+                    h5{
+                        padding-bottom: 0;
+                    }
+                    p{
+                        font-size: 1.2rem;
+                        padding: 3rem 0 2.4rem;
+                        width: 80%;
+                    }
+                    input.mobile{
+                        margin-bottom: 2.5rem;
+                    }
+                    .mail, textarea{
+                        margin-top: 2.5rem;
+                    }
+                }
+                p.share{
+                    justify-content: center;
+                    padding-top: 4.1rem;
+                }
+                .contact-links{
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

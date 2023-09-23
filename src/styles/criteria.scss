@@ -1,6 +1,19 @@
 .criteria{
     padding-left: 4rem;
     border-bottom:  1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    .purple{
+        top: 6%;
+        left: 10%;
+    }
+    .starwhite{
+        bottom: 20%;
+        left: 45%;
+    }
+    .greystar{
+        top: 50%;
+        left: 25%;
+    }
     &__section{
         display: grid;
         grid-template-columns: 1fr 1fr;

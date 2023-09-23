@@ -2,10 +2,21 @@ import React from 'react'
 import criteriaimg from '../assets/images/criteria.png'
 import Content from '../Props/Content'
 import { ReactComponent as Ellipse } from '../assets/svgs/ellipse.svg'
+import Star from '../Props/Star'
 
 function Criteria() {
+  const windowidth = window.innerWidth
   return (
     <div className='criteria'>
+      <div className='starwhite starr'>
+      <Star height={windowidth>=900?(32):(12)} width={windowidth>=900?(26):(10)} delay={3} color={'white'}/>
+        </div>
+        <div className='purple starr'>
+      <Star height={windowidth>=900?(32):(12)} width={windowidth>=900?(26):(10)} delay={4} color={'purple'}/>
+        </div>
+        <div className='greystar starr'>
+      <Star height={windowidth>=900?(32):(12)} width={windowidth>=900?(26):(10)} delay={4} color={'grey'}/>
+        </div>
       <div className='criteria__section'>
         <div className='criteria__section__left'>
             <Ellipse className='ellipse'/>

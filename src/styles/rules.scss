@@ -1,6 +1,15 @@
 .rules{
     padding: 0 8.1rem;
     border-bottom:  1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    .starwhite{
+        left: 50%;
+        bottom: 20%;
+    }
+    .greystar{
+        left: 30%;
+        top: 20%;
+    }
     &__section{
         display: grid;
         grid-template-columns: 1fr 1fr;

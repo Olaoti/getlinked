@@ -38,8 +38,8 @@ function Nav() {
       <NavLink to="/Contact"  className='link'>
         <p className='contactlink'>Contact</p>
       </NavLink>
-      <NavLink to="/"  className='link'>
-        <button className='gallerylink'>Register</button>
+      <NavLink to="/register"  className='link register'>
+        <button className='registerlink'>Register</button>
       </NavLink>
     </div>
   </div>

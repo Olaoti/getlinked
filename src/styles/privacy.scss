@@ -1,4 +1,38 @@
 .privacy{
+    position: relative;
+    .purplestar{
+        left: 10%;
+        top: 8%;
+    }
+    .lilacstar{
+        right:45%;
+        top: 15%;
+    }
+    .greystar{
+        left: 50%;
+        bottom:25%;
+    }
+    .lilacstar1{
+        bottom: 18%;
+        right: 10%;
+    }
+    .greystar1{
+        left: 20%;
+        top: 20%;
+    }
+    .whitestar1{
+        right:45%;
+        top: 50%;
+    }
+    .purplestar1{
+        right: 10%;
+        bottom:45%;
+    }
+    .whitestar{
+        bottom: 8%;
+        right: 10%;
+    }
+    
     &__section{
         padding: 9.3rem 0 16.7rem;
         display: grid;
@@ -91,6 +125,8 @@
             display: block;
             &__left{
                     text-align: center;
+                    padding-left: 0;
+
                     p.date{
                         padding: 0 0 2.8rem;
                     }
